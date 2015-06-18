@@ -1,0 +1,287 @@
+@{Layout="/Views/Shared/_layout.cshtml";}
+<body>
+
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Operating Systems</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>Android</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Symbian Phones</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Windows Phones</a></li>
+									
+								</ul>
+							
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>Samsung</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Apple</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Nokia</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Oppo</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Sony</a></li>
+									<li><a href="#"> <span class="pull-right"></span>QMobile</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Huawei</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						<div class="brands_products"><!--brands_products-->
+							<h2>RAM</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>256 MB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>512 MB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>1 GB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>2 GB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>3 GB and more</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="brands_products"><!--brands_products-->
+							<h2>Price Ranges</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>price < 5000 </a></li>
+									<li><a href="#"> <span class="pull-right"></span>5001-10,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>10,001-20,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>20,001-30,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>30,000-35,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>price > 35,000</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						<div class="brands_products"><!--brands_products-->
+							<h2>Camera</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>13 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>8 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>5 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>3 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>2 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>1 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>13+ MP</a></li>
+								</ul>
+							</div>
+						</div>
+						
+					
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="product-details"><!--product-details-->
+						<div class="col-sm-5">
+							<div class="view-product">
+								<img src="@Model.image" alt="" height="381" width="266" />
+							</div>
+							<div id="similar-product" class="carousel slide" data-ride="carousel">
+								
+								  <!-- Wrapper for slides -->
+								    <div class="carousel-inner">
+										<div class="item active">
+										  <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
+										  <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
+										  <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+										</div>
+										<div class="item">
+										  <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
+										  <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
+										  <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+										</div>
+										<div class="item">
+										  <a href=""><img src="~/images/product-details/similar1.jpg" alt=""></a>
+										  <a href=""><img src="~/images/product-details/similar2.jpg" alt=""></a>
+										  <a href=""><img src="~/images/product-details/similar3.jpg" alt=""></a>
+										</div>
+										
+									</div>
+
+								  <!-- Controls -->
+								  <a class="left item-control" href="#similar-product" data-slide="prev">
+									<i class="fa fa-angle-left"></i>
+								  </a>
+								  <a class="right item-control" href="#similar-product" data-slide="next">
+									<i class="fa fa-angle-right"></i>
+								  </a>
+							</div>
+
+						</div>
+						<div class="col-sm-7">
+							<div class="product-information"><!--/product-information-->
+								<img src="~/images/product-details/new.jpg" class="newarrival" alt="" />
+								<h2>@Model.name</h2>
+								<p>Web ID: 1089772</p>
+								<img src="~/images/product-details/rating.png" alt="" />
+								<span>
+									<span>@Model.price</span>
+									<label>Quantity:</label>
+									<input type="text" value="3" />
+									<button type="button" class="btn btn-fefault cart">
+										<i class="fa fa-shopping-cart"></i>
+										Add to cart
+									</button>
+								</span>
+								<p><b>Processor:</b> @Model.processor</p>
+								<p><b>OS:</b>@Model.os</p>
+								<p><b>Display:</b> 	@Model.display</p>
+								<p><b>Camera:</b> @Model.camera</p>
+								<p><b>Battery:</b> 	@Model.battery</p>
+								<p><b>Other Features:</b> @Model.other</p>
+								<a href=""><img src="~/images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+							</div><!--/product-information-->
+						</div>
+					
+					<div class="category-tab shop-details-tab"><!--category-tab-->
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#reviews" data-toggle="tab">Reviews (5)</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade" id="details" >
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery1.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery2.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery3.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery4.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="tab-pane fade" id="companyprofile" >
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery1.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery3.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery2.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-images-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="~/images/home/gallery4.jpg" alt="" />
+												<h2>$56</h2>
+												<p>Easy Polo Black Edition</p>
+												<button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="tab-pane fade active in" id="reviews" >
+								<div class="col-sm-12">
+									<ul>
+										<li><a href=""><i class="fa fa-user"></i>Shuja Rehman</a></li>
+										<li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+										<li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+									</ul>
+									<p>Samsung Galaxy Grand Prime is awesome Mobile.Battery Timing is Perfect</p>
+									<p><b>Write Your Review</b></p>
+									
+									<form action="#">
+										<span>
+											<input type="text" placeholder="Your Name"/>
+											<input type="email" placeholder="Email Address"/>
+										</span>
+										<textarea name="" ></textarea>
+										<b>Rating: </b> <img src="~/images/product-details/rating.png" alt="" />
+										<button type="button" class="btn btn-default pull-right">
+											Submit
+										</button>
+									</form>
+								</div>
+							</div>
+							
+						</div>
+					</div><!--/category-tab-->
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+    
+</body>
