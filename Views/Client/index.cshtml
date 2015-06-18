@@ -1,0 +1,276 @@
+
+@{Layout="/Views/Shared/_layout.cshtml";}
+<script src="~/Scripts/jquery.js"></script>
+<link href="~/Content/animate.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/main.css" rel="stylesheet" />
+<link href="~/Content/prettyPhoto.css" rel="stylesheet" />
+<link href="~/Content/price-range.css" rel="stylesheet" />
+<link href="~/Content/responsive.css" rel="stylesheet" />
+<link href="~/Content/Site.css" rel="stylesheet" />
+ <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/contact.js"></script>
+    <script src="../../Scripts/gmaps.js"></script>
+    <script src="../../Scripts/html5shiv.js"></script>
+    <script src="../../Scripts/jquery.js"></script>
+    <script src="../../Scripts/jquery.prettyPhoto.js"></script>
+    <script src="../../Scripts/jquery.scrollUp.min.js"></script>
+    <script src="../../Scripts/main.js"></script>
+    <script src="../../Scripts/price-range.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#br1').click( function () {
+
+            var brand = $('#br1').text;
+            $('#fmobiles img').remove();
+            $('#fmobiles h2').remove();
+            $('#fmobiles p').remove();
+            $('#fmobiles1 h2').remove();
+            $('#fmobiles1 p').remove();
+
+            $.getJSON(("/Client/searchBrand?b = " + brand), function (data) {
+                for (var i = 0; i < data.Count; i++) {
+                    $('fmobiles1').append('<h2>' + data[i].price + '</h2><p>' + data[i].name + '</p>');
+                    $('#fmobiles').append('<img width=268 height=249 src="' + data[i].image + '"/><h2>' + data[i].price + '</h2><p>' + d[i].name + '</p>');
+                }
+            });
+        });
+    });
+</script>
+<body>
+	
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
+							<li data-target="#slider-carousel" data-slide-to="1"></li>
+							<li data-target="#slider-carousel" data-slide-to="2"></li>
+						</ol>
+						
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="col-sm-6">
+									<h1><span>SM MEHDI</span>-Online Mobiles</h1>
+									<h2>Our Goal : Your Satisfaction</h2>
+									<p>We deal in all kinds of Mobile Phones of all brands.Free Home Delievry. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+									
+								</div>
+							</div>
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>SM MEHDI</span>-Online Mobiles</h1>
+									<h2>Our Goal : Your Satisfaction</h2>
+									<p>We deal in all kinds of Mobile Phones of all brands.Free Home Delievry. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+									
+								</div>
+							</div>
+							
+							<div class="item">
+								<div class="col-sm-6">
+									<h1><span>SM MEHDI</span>-Online Mobiles</h1>
+									<h2>Our Goal : Your Satisfaction</h2>
+									<p>We deal in all kinds of Mobile Phones of all brands.Free Home Delievry. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+								<div class="col-sm-6">
+									<img src="/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+									
+								</div>
+							</div>
+							
+						</div>
+						
+						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+						<h2>Operating Systems</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-productsr-->
+							<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>Android</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Symbian Phones</a></li>
+									<li><a href="#"> <span class="pull-right"></span>Windows Phones</a></li>
+									
+								</ul>
+							
+						</div><!--/category-products-->
+					
+						<div class="brands_products"><!--brands_products-->
+							<h2>Brands</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+                                 @foreach (var n in ViewBag.brands)
+                                 {
+                                     <button id="br1">@n.name</button>
+                                 }
+                                                                     
+                                    
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						<div class="brands_products"><!--brands_products-->
+							<h2>RAM</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>256 MB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>512 MB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>1 GB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>2 GB</a></li>
+									<li><a href="#"> <span class="pull-right"></span>3 GB and more</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="brands_products"><!--brands_products-->
+							<h2>Price Ranges</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>price < 5000 </a></li>
+									<li><a href="#"> <span class="pull-right"></span>5001-10,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>10,001-20,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>20,001-30,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>30,000-35,000</a></li>
+									<li><a href="#"> <span class="pull-right"></span>price > 35,000</a></li>
+								</ul>
+							</div>
+						</div><!--/brands_products-->
+						<div class="brands_products"><!--brands_products-->
+							<h2>Camera</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right"></span>13 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>8 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>5 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>3 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>2 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>1 MP</a></li>
+									<li><a href="#"> <span class="pull-right"></span>13+ MP</a></li>
+								</ul>
+							</div>
+						</div>
+						
+					
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items" "><!--features_items-->
+						<h2 class="title text-center">Features Items</h2>
+                        @foreach(var s in ViewBag.mobiles){
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products" >
+									<div class="productinfo text-center" id="fmobiles">
+                                        
+										<img width="268" height="249" src="@s.image"/>
+										<h2>@s.price</h2>
+										<p>@s.name</p>
+										
+									</div>
+                                    <a href="~/Client/productdetails/@s.Id">
+									<div class="product-overlay">
+										<div class="overlay-content" id="fmobiles1">
+											<h2>@s.price</h2>
+											<p>@s.name</p>
+                                            
+											<a href="~/Client/addToCart/?prod=@s.Id" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+										</div>
+									</div>
+                                        </a>
+								</div>
+							</div>
+						</div>
+                        }
+						
+						
+					</div><!--features_items-->
+					
+					
+					
+					<div class="recommended_items"><!--recommended_items-->
+						<h2 class="title text-center">recommended items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+								<div class="item active">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="~/images/home/recommend1.jpg" alt="" />
+													<h2>21,000</h2>
+													<p>Samsung Galaxy Grand Prime</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="~/images/home/recommend2.jpg" alt="" />
+													<h2>18,999</h2>
+													<p>Huawei Honor 3c</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="~/images/home/recommend3.jpg" alt="" />
+													<h2>16,000</h2>
+													<p>QMobile Noir A400</p>
+													<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+												
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div><!--/recommended_items-->
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	
+</body>
