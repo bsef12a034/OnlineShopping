@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "view";
+}
+
+<h2>view</h2>
+<table>
+    <tr>
+        <td>Item Id</td>
+        <td>Item Quantity</td>
+        <td>User Id</td>
+    </tr>
+    @foreach (var n in Model)
+    {
+        <tr>
+            <td>@n.itemId</td>
+            <td>@n.quantity</td>
+            <td>@n.userId</td>
+        </tr>
+    }
+</table>

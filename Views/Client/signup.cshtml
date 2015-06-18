@@ -1,0 +1,56 @@
+﻿@model Term_Project.Models.user
+@{Layout="/Views/Shared/_layout.cshtml";}
+<script src="~/Scripts/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#checking').hide();
+
+        $('#em').click(function () {
+
+            var userName = $('#ema').val();
+
+            //alert('User Name ='+ userName);
+            $('#checking').show();
+            $.getJSON("/Client/CheckUserName?UserName=" + userName, function (data) {
+                $('#checking').hide();
+                if (!data) {
+                    $('#result').text("User already exists in database");
+
+                }
+                else {
+                    $('#result').text("User Name is available");
+                }
+            });
+
+        });
+
+    });
+    </script>
+<div style="text-align: center;">
+	<div style="box-sizing: border-box; display: inline-block; width: auto; max-width: 480px; background-color: #FFFFFF; border: 1px solid #C7C6C2; border-radius: 5px; box-shadow: 0px 0px 8px #C7C6C2; margin: 50px auto auto;">
+	<div style="background: #C7C6C2; border-radius: 5px 5px 0px 0px; padding: 15px;"><span style="font-family: verdana,arial; color: #FFFFFF; font-size: 1.00em; ">Registration. Please fill in the form below.</span></div>
+	<div style="background: ; padding: 15px">
+	<style type="text/css" scoped="">
+	td { text-align:left; font-family: verdana,arial; color: black; font-size: 0.80em; }
+	input { border: 1px solid #CCCCCC; border-radius: 5px; color: #666666; display: inline-block; font-size: 0.95em;  padding: 5px; width: 100%; }
+	input[type="button"], input[type="reset"], input[type="submit"] { height: auto; width: auto; cursor: pointer; box-shadow: 0px 0px 5px #C7C6C2; float: right; text-align:right; margin-top: 10px; margin-left:7px;}
+	table.center { margin-left:auto; margin-right:auto; }
+	.error { font-family: verdana,arial; color: #FF0000; font-size: 0.80em; }
+	</style>
+        <button id="em">Check</button>
+    @using(Html.BeginForm("addUser","Client",FormMethod.Get,new {enctype = "multipart/form-data"  })){
+        <div id="checking">Checking...</div>
+    <table class="center">
+     <tr><td>@Html.LabelFor(n => n.email)</td>
+         <td>@Html.TextBoxFor(n=>n.email, new {id="ema"})</td>
+         
+        <td><div id="result"></div></td></tr>
+         <tr><td>@Html.LabelFor(n=>n.password)</td>
+         <td>@Html.TextBoxFor(n=>n.password, new {type="password"})</td></tr>
+        <tr><td>@Html.LabelFor(n=>n.name)</td>
+        <td>@Html.TextBoxFor(n=>n.name)</td></tr>
+    <tr><td><input type="submit" value="Submit"></td></tr>
+</table>
+}
+</div></div></div>

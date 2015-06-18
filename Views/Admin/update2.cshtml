@@ -1,0 +1,34 @@
+﻿@model Term_Project.Models.mobile
+
+@{Layout="/Views/Shared/_layout.cshtml";}
+
+<body>
+    @using(Html.BeginForm("updateMobile","Admin",FormMethod.Post,new {enctype = "multipart/form-data" , 
+    style="border: double;text-align:center" })){
+    
+    <br/><br/><br/>
+        @Html.LabelFor(m=>m.name )
+        @Html.TextBoxFor(m=>m.name ,new{ value=Model.name,isReadOnly = "true" })<br /><br />
+        @Html.LabelFor(m=>m.brand)
+        @Html.TextBoxFor(m=>m.brand,new{ value=Model.brand })<br /><br />
+        @Html.LabelFor(m=>m.price)
+        @Html.TextBoxFor(m=>m.price,new{ value=Model.price })<br /><br />
+        @Html.LabelFor(m=>m.processor)
+        @Html.TextBoxFor(m=>m.processor,new{ value=Model.processor })<br /><br />
+        @Html.LabelFor(m=>m.os)
+        @Html.TextBoxFor(m=>m.os,new{ value=Model.os })<br /><br />
+        @Html.LabelFor(m=>m.display)
+        @Html.TextBoxFor(m=>m.display,new{ value=Model.display })<br /><br />
+        @Html.LabelFor(m=>m.camera)
+        @Html.TextBoxFor(m=>m.camera,new{ value=Model.camera })<br /><br />
+        @Html.LabelFor(m=>m.battery)
+        @Html.TextBoxFor(m=>m.battery,new{ value=Model.battery })<br /><br />
+        @Html.LabelFor(m=>m.other)
+        @Html.TextBoxFor(m => m.other, new { value = Model.other })<br /><br />
+        @Html.LabelFor(m=>m.image)
+        @Html.TextBoxFor(m => m.image, new {type="file" ,value=Model.image})
+    <input type="submit" id="btn" value="Add Mobile">}
+    <br/><br/><br/>
+
+</body>
+
